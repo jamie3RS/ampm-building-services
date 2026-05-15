@@ -5,9 +5,6 @@
   <title>{{meta_title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  {{!-- Favicon — meridian four-quarter (shared across the AMPM brand family) --}}
-  <link rel="icon" type="image/svg+xml" href="{{asset "favicon.svg"}}">
-
   {{!-- Open Graph / Twitter --}}
   <link rel="canonical" href="{{url absolute="true"}}">
   <meta property="og:site_name" content="{{@site.title}}">
@@ -41,6 +38,11 @@
   </style>
 
   {{ghost_head}}
+
+  {{!-- Favicon — meridian four-quarter (shared across the AMPM brand family).
+       Placed after {{ghost_head}} so the theme's icon overrides Ghost's
+       default round-O favicon. Same-rel link tags later in <head> win. --}}
+  <link rel="icon" type="image/svg+xml" href="{{asset "favicon.svg"}}">
 </head>
 <body class="{{body_class}} bs-site">
 
