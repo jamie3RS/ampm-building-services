@@ -554,6 +554,10 @@ a.group-chip:hover {
   border-color: rgba(246, 243, 236, 0.55);
   color: var(--paper);
 }
+
+/* About page — Group-context 3-column tiles (flagship / this entity / wider Group) */
+a.group-tile { transition: background 0.18s ease; }
+a.group-tile:hover { background: #232838; }
 .group-chip.current {
   background: var(--bs-lead);
   border-color: var(--bs-lead);
