@@ -1,0 +1,29 @@
+{{!< default}}
+{{#tag}}
+<section class="section">
+  <div class="reveal" style="margin-bottom: 24px;">
+    <div class="eyebrow">Tag · {{name}}</div>
+    <h1 class="display">All under <em>"{{name}}"</em></h1>
+    {{#if description}}
+      <p class="deck" style="margin-top: 16px; max-width: 60ch;">{{description}}</p>
+    {{/if}}
+  </div>
+</section>
+{{/tag}}
+
+{{#if posts}}
+<section class="section" style="padding-top: 0;">
+  <div class="cap-grid reveal">
+    {{#foreach posts}}
+      <a class="cap-card" href="{{url}}">
+        <div class="kind">{{#primary_tag}}{{name}}{{/primary_tag}} · {{date format="DD MMM YYYY"}}</div>
+        <h4>{{title}}</h4>
+        {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>{{excerpt words="22"}}</p>{{/if}}
+      </a>
+    {{/foreach}}
+  </div>
+  {{pagination}}
+</section>
+{{else}}
+<section class="section"><p class="deck">No posts yet under this tag.</p></section>
+{{/if}}

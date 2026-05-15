@@ -1,0 +1,32 @@
+{{!< default}}
+{{!-- Generic page template. Most pages on this site use the custom-bs template;
+     this is the fallback for any page without one assigned. --}}
+{{#page}}
+<article class="article">
+  {{#if @page.show_title_and_feature_image}}
+    <header class="article-header is-light">
+      <div class="article-header-inner narrow">
+        <div class="reveal">
+          <div class="eyebrow">Page</div>
+        </div>
+        <div class="reveal">
+          <h1 class="display">{{title}}</h1>
+          {{#if custom_excerpt}}
+            <p class="deck" style="margin-top: 24px; max-width: 52ch;">{{custom_excerpt}}</p>
+          {{/if}}
+        </div>
+      </div>
+    </header>
+
+    {{#if feature_image}}
+      <div style="max-width: 880px; margin: 40px auto 0; padding: 0 36px;">
+        <img src="{{img_url feature_image size="l"}}" alt="{{title}}" style="width: 100%; display: block;">
+      </div>
+    {{/if}}
+  {{/if}}
+
+  <div class="prose reveal">
+    {{content}}
+  </div>
+</article>
+{{/page}}

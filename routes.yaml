@@ -1,0 +1,25 @@
+## AMPM Building Services — Ghost routes config
+##
+## Upload this YAML in Ghost Admin → Settings → Labs → Routes → Upload routes file.
+## Maps the apex domain to the bs-home page; sub-paths to the other four pages.
+
+routes:
+  /:
+    template: custom-bs
+    data: page.bs-home
+  /services/:
+    template: custom-bs
+    data: page.bs-services
+  /about/:
+    template: custom-bs
+    data: page.bs-about
+  /work/:
+    template: custom-bs
+    data: page.bs-work
+  /contact/:
+    template: custom-bs
+    data: page.bs-contact
+
+taxonomies:
+  tag: /topic/{slug}/
+  author: /author/{slug}/

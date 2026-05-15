@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (in case build tooling is added later)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Theme packaging artifacts
+*.zip
+dist/
+
+# Environment / secrets
+.env
+.env.local

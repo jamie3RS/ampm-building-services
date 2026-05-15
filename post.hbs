@@ -1,0 +1,28 @@
+{{!< default}}
+{{#post}}
+<article class="article">
+  <header class="article-header is-light">
+    <div class="article-header-inner narrow">
+      <div class="reveal">
+        <div class="eyebrow">{{#primary_tag}}{{name}}{{else}}Post{{/primary_tag}} · {{date format="DD MMM YYYY"}}</div>
+      </div>
+      <div class="reveal">
+        <h1 class="display">{{title}}</h1>
+        {{#if custom_excerpt}}
+          <p class="deck" style="margin-top: 24px; max-width: 52ch;">{{custom_excerpt}}</p>
+        {{/if}}
+      </div>
+    </div>
+  </header>
+
+  {{#if feature_image}}
+    <div style="max-width: 1100px; margin: 40px auto 0; padding: 0 36px;">
+      <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" style="width: 100%; display: block;">
+    </div>
+  {{/if}}
+
+  <div class="prose reveal">
+    {{content}}
+  </div>
+</article>
+{{/post}}

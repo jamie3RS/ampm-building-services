@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+  <meta charset="utf-8">
+  <title>{{meta_title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  {{!-- Favicon — meridian four-quarter (shared across the AMPM brand family) --}}
+  <link rel="icon" type="image/svg+xml" href="{{asset "favicon.svg"}}">
+
+  {{!-- Open Graph / Twitter --}}
+  <link rel="canonical" href="{{url absolute="true"}}">
+  <meta property="og:site_name" content="{{@site.title}}">
+  <meta property="og:type" content="{{#is "post"}}article{{else}}website{{/is}}">
+  <meta property="og:title" content="{{meta_title}}">
+  <meta property="og:description" content="{{meta_description}}">
+  <meta property="og:url" content="{{url absolute="true"}}">
+  {{#if feature_image}}<meta property="og:image" content="{{img_url feature_image absolute="true"}}">{{/if}}
+  <meta name="twitter:card" content="summary_large_image">
+
+  {{!-- Fonts (shared with the wider AMPM family) --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  {{!-- Shared base styles + BS-specific layer --}}
+  <link rel="stylesheet" href="{{asset "css/main.css"}}">
+  <link rel="stylesheet" href="{{asset "css/bs-site.css"}}">
+
+  {{!-- BS lead colour + meridian palette --}}
+  <style>
+    :root {
+      --ampm-c1: #E8742C;
+      --ampm-c2: #5BAA47;
+      --ampm-c3: #2E5FAB;
+      --ampm-c4: #7A2E8F;
+      --bs-lead:      #3D8E2E;
+      --bs-lead-deep: #2A6A1F;
+      --bs-lead-soft: #6BA45D;
+    }
+  </style>
+
+  {{ghost_head}}
+</head>
+<body class="{{body_class}} bs-site">
+
+  {{> "bs/header"}}
+
+  <main id="site-main">
+    {{{body}}}
+  </main>
+
+  {{> "bs/footer"}}
+
+  {{!-- Reveal-on-scroll + counter animation (shared with the Group inline scripts) --}}
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal:not(.is-in)');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    (function () {
+      var counters = document.querySelectorAll('[data-counter]');
+      if (!counters.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target;
+          var to = parseInt(el.getAttribute('data-counter'), 10) || 0;
+          var dur = 1200, start = performance.now();
+          (function tick(now) {
+            var t = Math.min(1, (now - start) / dur);
+            var eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = Math.round(to * eased).toLocaleString();
+            if (t < 1) requestAnimationFrame(tick);
+          })(start);
+          io.unobserve(el);
+        });
+      }, { threshold: 0.3 });
+      counters.forEach(function (c) { io.observe(c); });
+    })();
+  </script>
+
+  {{ghost_foot}}
+</body>
+</html>

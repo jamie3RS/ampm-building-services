@@ -1,0 +1,28 @@
+{{!-- AMPM Building Services — site header --}}
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="bs-brand" href="/">
+      <div class="ampm-word">AMPM</div>
+      <div class="divider"></div>
+      <div class="sub">
+        <div class="name">Building Services</div>
+        <div class="meridian">
+          <span style="background: var(--ampm-c1);"></span>
+          <span style="background: var(--bs-lead);"></span>
+          <span style="background: var(--ampm-c3);"></span>
+          <span style="background: var(--ampm-c4);"></span>
+        </div>
+      </div>
+    </a>
+
+    <nav>
+      <a class="{{#match page.slug "bs-home"}}is-active{{/match}}" href="/">Home</a>
+      <a class="{{#match page.slug "bs-services"}}is-active{{/match}}" href="/services/">Services</a>
+      <a class="{{#match page.slug "bs-about"}}is-active{{/match}}" href="/about/">About</a>
+      <a class="{{#match page.slug "bs-work"}}is-active{{/match}}" href="/work/">Work</a>
+      <a class="{{#match page.slug "bs-contact"}}is-active{{/match}}" href="/contact/">Contact</a>
+    </nav>
+
+    <a class="header-cta" href="/contact/">Request a quote</a>
+  </div>
+</header>

@@ -1,0 +1,27 @@
+{
+  "name": "ampm-building-services",
+  "description": "AMPM Building Services — M&E, fit-out, roofing and groundworks. A subsidiary of AMPM Group.",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "AMPM Group",
+    "email": "jamie@ampm.co.uk"
+  },
+  "keywords": ["ghost-theme", "ampm", "building-services"],
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xs": { "width": 150 },
+      "s":  { "width": 400 },
+      "m":  { "width": 800 },
+      "l":  { "width": 1200 },
+      "xl": { "width": 2000 }
+    },
+    "card_assets": {
+      "exclude": ["bookmark"]
+    }
+  }
+}

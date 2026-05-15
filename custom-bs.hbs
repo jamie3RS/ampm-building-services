@@ -1,0 +1,19 @@
+{{!< default}}
+{{!--
+  custom-bs.hbs — the BS micro-site template.
+
+  Five Ghost pages share this template, distinguished by flat slug.
+  routes.yaml maps:
+    /           → page.bs-home
+    /services/  → page.bs-services
+    /about/     → page.bs-about
+    /work/      → page.bs-work
+    /contact/   → page.bs-contact
+  Content for each page lives in partials/bs/*.hbs, selected by slug.
+--}}
+
+{{#match page.slug "bs-home"}}{{> "bs/home"}}{{/match}}
+{{#match page.slug "bs-services"}}{{> "bs/services"}}{{/match}}
+{{#match page.slug "bs-about"}}{{> "bs/about"}}{{/match}}
+{{#match page.slug "bs-work"}}{{> "bs/work"}}{{/match}}
+{{#match page.slug "bs-contact"}}{{> "bs/contact"}}{{/match}}

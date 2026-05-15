@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- AMPM meridian — four-quarter square favicon -->
+  <rect x="0"  y="0"  width="16" height="16" fill="#E8742C"/>
+  <rect x="16" y="0"  width="16" height="16" fill="#5BAA47"/>
+  <rect x="0"  y="16" width="16" height="16" fill="#2E5FAB"/>
+  <rect x="16" y="16" width="16" height="16" fill="#7A2E8F"/>
+</svg>
