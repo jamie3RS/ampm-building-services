@@ -1,0 +1,23 @@
+{{!-- Case-study card for the BS Work index. Expects to be inside {{#foreach posts}}. --}}
+<a class="work-card" href="{{url}}">
+  <div class="img-ph" style="aspect-ratio: 4 / 3;">
+    {{#if feature_image}}
+      <img src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy">
+    {{else}}
+      <div class="img-ph-stripes"></div>
+      <div class="img-ph-label">{{#primary_tag}}{{name}}{{/primary_tag}}</div>
+    {{/if}}
+  </div>
+  <div class="work-card-meta">
+    {{#primary_tag}}<span>{{name}}</span>{{/primary_tag}}
+    <span>·</span>
+    <span>{{date format="YYYY"}}</span>
+  </div>
+  <h3>{{title}}</h3>
+  {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}<p>{{excerpt words="22"}}</p>{{/if}}
+  <div class="work-card-tags">
+    {{#foreach tags from="2" to="4"}}
+      <span class="tag">{{name}}</span>
+    {{/foreach}}
+  </div>
+</a>

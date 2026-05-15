@@ -1,7 +1,8 @@
 ## AMPM Building Services — Ghost routes config
 ##
 ## Upload this YAML in Ghost Admin → Settings → Labs → Routes → Upload routes file.
-## Maps the apex domain to the bs-home page; sub-paths to the other four pages.
+## Maps the apex domain to the bs-home page; sub-paths to the other three pages;
+## /work/ becomes a Ghost Collection of case-study posts.
 
 routes:
   /:
@@ -13,13 +14,23 @@ routes:
   /about/:
     template: custom-bs
     data: page.bs-about
-  /work/:
-    template: custom-bs
-    data: page.bs-work
   /contact/:
     template: custom-bs
     data: page.bs-contact
 
+## Collections — group of posts at a URL prefix, with a permalink shape.
+## Case studies are tag-driven, so each post needs the "case-study" primary
+## tag to land in /work/.
+collections:
+  /work/:
+    permalink: /work/{slug}/
+    template:
+      - custom-bs-work
+      - index
+    filter: tag:case-study
+    data: page.bs-work
+
+## Taxonomies — how tag and author URLs are shaped.
 taxonomies:
   tag: /topic/{slug}/
   author: /author/{slug}/

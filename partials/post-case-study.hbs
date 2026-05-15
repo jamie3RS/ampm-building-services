@@ -1,0 +1,100 @@
+{{!-- BS case-study post layout.
+     Markdown body renders as-is; the layout around it (dark header, meta strip,
+     cover image, related cards, CTA) is template-driven.
+     BS-themed: green --bs-lead accent instead of meridian colours. --}}
+
+<article class="article">
+  <header class="article-header is-dark">
+    <div class="article-header-inner">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="eyebrow on-dark">
+          Case study
+          {{#primary_tag}} · {{name}}{{/primary_tag}}
+        </div>
+        {{!-- BS lead-stripe instead of the four-quarter meridian --}}
+        <div class="bs-meridian" style="max-width: 420px; margin-top: 4px;">
+          <span style="background: var(--ampm-c1);"></span>
+          <span class="lead"></span>
+          <span style="background: var(--ampm-c3);"></span>
+          <span style="background: var(--ampm-c4);"></span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <h1 class="display" style="color: var(--paper); max-width: 22ch;">{{title}}</h1>
+        {{#if custom_excerpt}}
+          <p class="deck" style="margin-top: 28px; color: rgba(246, 243, 236, 0.85);">{{custom_excerpt}}</p>
+        {{/if}}
+      </div>
+
+      <dl class="article-meta reveal">
+        {{#if primary_tag}}<div><dt>Lead service</dt><dd>{{primary_tag.name}}</dd></div>{{/if}}
+        <div><dt>Year</dt><dd>{{date format="YYYY"}}</dd></div>
+        {{#if tags}}
+          <div style="grid-column: span 2;">
+            <dt>Scope</dt>
+            <dd>
+              {{#foreach tags from="2"}}{{name}}{{#unless @last}}, {{/unless}}{{/foreach}}
+            </dd>
+          </div>
+        {{/if}}
+        {{#if primary_author}}<div><dt>Author</dt><dd>{{primary_author.name}}</dd></div>{{/if}}
+      </dl>
+    </div>
+  </header>
+
+  {{#if feature_image}}
+    <div class="article-cover reveal">
+      <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" style="width: 100%; aspect-ratio: 21 / 9; object-fit: cover; display: block;">
+    </div>
+  {{/if}}
+
+  <section class="article-section reveal">
+    <div class="article-section-inner two-col">
+      <div class="article-aside">
+        <div class="eyebrow">Case study</div>
+      </div>
+      <div class="article-body">
+        {{!-- Author body. Markdown headings (## Brief, ## Scope, etc.) and quotes
+             (> "pull quote") render with the case-study CSS scoped to .article-body. --}}
+        {{content}}
+      </div>
+    </div>
+  </section>
+</article>
+
+{{!-- Related case studies (same primary tag = case-study, exclude this one) --}}
+{{#get "posts" filter="tag:case-study+id:-{{post.id}}" limit="3" as |related|}}
+{{#if related}}
+<section class="section">
+  <div class="reveal" style="margin-bottom: 32px; display: flex; justify-content: space-between; align-items: baseline;">
+    <h3 class="display" style="font-size: clamp(28px, 3vw, 40px);">More work from the team</h3>
+    <a href="/work/" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 4px;">See all →</a>
+  </div>
+  <div class="work-grid reveal">
+    {{#foreach related}}
+      {{> "work-card"}}
+    {{/foreach}}
+  </div>
+</section>
+{{/if}}
+{{/get}}
+
+{{!-- Talk-to-us CTA — green band (BS) --}}
+<section class="section green-band">
+  <div class="section-inner">
+    <div class="close-cta reveal">
+      <div>
+        <div class="eyebrow on-dark">Talk to us</div>
+        <h2 class="display" style="font-size: clamp(28px, 3.5vw, 48px);">Project on the same scope? <em>Get a quote.</em></h2>
+        <p class="deck" style="margin-top: 16px; color: rgba(246, 243, 236, 0.92);">
+          Tier-1 supply-chain pre-qualification, direct quotation or general enquiry — answered by a named human within 24 hours.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
+        <a class="btn ghost" href="/contact/">Request a quote →</a>
+        <a class="btn ghost" href="/contact/">General enquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
