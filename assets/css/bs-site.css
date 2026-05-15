@@ -755,6 +755,16 @@ a { color: inherit; text-decoration: none; }
   min-height: 280px;
   position: relative;
 }
+/* A lone trailing card spans both columns (e.g. 5 cards = 2 + 2 + 1-wide).
+   Spotlights the new Fabric service-line on the bottom row. */
+@media (min-width: 801px) {
+  .cap-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .cap-card:last-child:nth-child(odd) .cap-image {
+    height: 220px;
+  }
+}
 .cap-card .cap-image {
   width: 100%;
   height: 180px;
