@@ -79,6 +79,25 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.2s ease;
 }
 .site-header .header-cta:hover { background: var(--bs-lead-deep); border-color: var(--bs-lead-deep); }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.site-header .header-tel {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-header .header-tel:hover { color: var(--bs-lead-deep); border-bottom-color: var(--bs-lead); }
+.site-header.is-dark .header-tel { color: var(--paper); }
+@media (max-width: 640px) {
+  .site-header .header-tel { display: none; }
+}
 
 /* BS brand mark — wordmark + sub-brand + meridian */
 .bs-brand {
