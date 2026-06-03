@@ -679,6 +679,24 @@ a.group-tile:hover { background: #232838; }
 .accred-table .status-pill.in  { color: var(--mustard); background: rgba(138, 106, 31, 0.08); }
 .accred-table .status-pill.plan { color: var(--ink-3); background: transparent; }
 
+/* ——— Group accreditation chips ——— */
+.accred-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  padding: 12px 10px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--bs-lead);
+  line-height: 1.25;
+}
+
 /* ——— People grid (About page) ——— */
 .people-grid {
   display: grid;
