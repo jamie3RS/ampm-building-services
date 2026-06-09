@@ -1,7 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- AMPM meridian — four-quarter square favicon (rotated 90° CCW: green TL) -->
-  <rect x="0"  y="0"  width="16" height="16" fill="#5BAA47"/>
-  <rect x="16" y="0"  width="16" height="16" fill="#7A2E8F"/>
-  <rect x="0"  y="16" width="16" height="16" fill="#E8742C"/>
-  <rect x="16" y="16" width="16" height="16" fill="#2E5FAB"/>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AMPM Building Services icon"><rect width="120" height="120" rx="22" fill="#1a1f2b"/><text x="60" y="78" text-anchor="middle" font-family="'Source Serif 4',Georgia,serif" font-weight="600" font-size="74" letter-spacing="-0.01em" fill="#f6f3ec">A</text><rect x="30" y="92" width="15" height="6" fill="#E8742C"/><rect x="45" y="92" width="15" height="6" fill="#3D8E2E"/><rect x="60" y="92" width="15" height="6" fill="#2E5FAB"/><rect x="75" y="92" width="15" height="6" fill="#7A2E8F"/></svg>
