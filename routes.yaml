@@ -1,36 +1,39 @@
-## AMPM Building Services — Ghost routes config
-##
-## Upload this YAML in Ghost Admin → Settings → Labs → Routes → Upload routes file.
-## Maps the apex domain to the bs-home page; sub-paths to the other three pages;
-## /work/ becomes a Ghost Collection of case-study posts.
+## AMPM Building Services — routes (new "AM→PM" site)
+## Every page uses the custom-bs-launch template, slug-routed to a
+## partials/launch/* page. Upload in Ghost Admin → Settings → Labs → Routes.
 
 routes:
   /:
-    template: custom-bs
+    template: custom-bs-launch
     data: page.bs-home
   /services/:
-    template: custom-bs
+    template: custom-bs-launch
     data: page.bs-services
+  /work/:
+    template: custom-bs-launch
+    data: page.bs-work
+  /compliance/:
+    template: custom-bs-launch
+    data: page.bs-compliance
   /about/:
-    template: custom-bs
+    template: custom-bs-launch
     data: page.bs-about
   /contact/:
-    template: custom-bs
+    template: custom-bs-launch
     data: page.bs-contact
+  /meph/:
+    template: custom-bs-launch
+    data: page.bs-meph
+  /commercial/:
+    template: custom-bs-launch
+    data: page.bs-commercial
+  /fabric/:
+    template: custom-bs-launch
+    data: page.bs-fabric
+  /groundworks/:
+    template: custom-bs-launch
+    data: page.bs-groundworks
 
-## Collections — group of posts at a URL prefix, with a permalink shape.
-## Case studies are tag-driven, so each post needs the "case-study" primary
-## tag to land in /work/.
-collections:
-  /work/:
-    permalink: /work/{slug}/
-    template:
-      - custom-bs-work
-      - index
-    filter: tag:case-study
-    data: page.bs-work
-
-## Taxonomies — how tag and author URLs are shaped.
 taxonomies:
   tag: /topic/{slug}/
   author: /author/{slug}/

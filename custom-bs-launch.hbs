@@ -1,0 +1,32 @@
+{{!-- AMPM Building Services — new "AM→PM" site. One template, slug-routed to a
+      page partial (partials/launch/*). Static rebuild of the React design:
+      native HTML + hybrid.css, no React/Babel — fast and crawlable. --}}
+<!doctype html>
+<html lang="en-GB" data-arc="full" data-atmos="animated" style="--d-display:'Big Shoulders Display','Archivo',sans-serif;">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+  <link rel="canonical" href="{{url absolute="true"}}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{asset "css/hybrid.css"}}" />
+  {{ghost_head}}
+  <link rel="icon" type="image/svg+xml" href="{{asset "favicon.svg"}}" />
+</head>
+<body>
+  {{#match page.slug "bs-home"}}{{> "launch/home"}}{{/match}}
+  {{#match page.slug "bs-services"}}{{> "launch/services"}}{{/match}}
+  {{#match page.slug "bs-work"}}{{> "launch/work"}}{{/match}}
+  {{#match page.slug "bs-compliance"}}{{> "launch/compliance"}}{{/match}}
+  {{#match page.slug "bs-about"}}{{> "launch/about"}}{{/match}}
+  {{#match page.slug "bs-contact"}}{{> "launch/contact"}}{{/match}}
+  {{#match page.slug "bs-meph"}}{{> "launch/meph"}}{{/match}}
+  {{#match page.slug "bs-commercial"}}{{> "launch/commercial"}}{{/match}}
+  {{#match page.slug "bs-fabric"}}{{> "launch/fabric"}}{{/match}}
+  {{#match page.slug "bs-groundworks"}}{{> "launch/groundworks"}}{{/match}}
+  {{ghost_foot}}
+</body>
+</html>
