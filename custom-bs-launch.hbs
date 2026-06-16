@@ -27,6 +27,39 @@
   {{#match page.slug "bs-commercial"}}{{> "launch/commercial"}}{{/match}}
   {{#match page.slug "bs-fabric"}}{{> "launch/fabric"}}{{/match}}
   {{#match page.slug "bs-groundworks"}}{{> "launch/groundworks"}}{{/match}}
+
+  {{!-- Day-arc: ported from the React design. On the home page the sun angle
+        (--sun) tracks scroll 0°→180° (dawn→night) and rotates the sun mark;
+        the nav switches to dark-section mode where it overlaps a dark band. --}}
+  <script>
+  (function () {
+    var rootEl = document.documentElement;
+    var nav = document.querySelector('nav.nav') || document.querySelector('nav');
+    var isHome = (location.pathname === '/' || location.pathname === '');
+    if (!isHome) rootEl.style.setProperty('--sun', '20deg');
+    var ticking = false;
+    function update() {
+      ticking = false;
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
+      var dark = false;
+      document.querySelectorAll('[data-nav-dark]').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < 64 && r.bottom > 0) dark = true;
+      });
+      if (nav) nav.classList.toggle('dark', dark);
+      if (isHome) {
+        var max = rootEl.scrollHeight - window.innerHeight;
+        var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+        rootEl.style.setProperty('--sun', (p * 180).toFixed(1) + 'deg');
+      }
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+    setTimeout(update, 300);
+  })();
+  </script>
   {{ghost_foot}}
 </body>
 </html>
