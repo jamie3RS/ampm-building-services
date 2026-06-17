@@ -73,16 +73,8 @@ html[data-arc="subtle"] .nightfall {
 .nav.dark { color: var(--night-text); }
 .nav.dark.scrolled { background: rgba(11,14,28,0.86); backdrop-filter: blur(16px) saturate(1.15); -webkit-backdrop-filter: blur(16px) saturate(1.15); box-shadow: 0 1px 0 rgba(244,234,216,0.15); }
 .sunmark { width: 38px; height: 38px; flex: none; display: block; overflow: visible; color: inherit; }
-.sun-ring { fill: none; stroke: currentColor; stroke-width: 2; }
-.sun-lit { fill: currentColor; }
-.sun-ray { stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
-.sun-rot { transform-box: view-box; transform-origin: 16px 16px;
-  transform: rotate(var(--sun, 20deg)); transition: transform 0.45s cubic-bezier(.4, 0, .2, 1); }
-.sun-pulse { transform-box: view-box; transform-origin: 16px 16px;
-  animation: sun-pulse 3.4s ease-in-out infinite; }
-@keyframes sun-pulse { 0%, 100% { transform: scale(0.88); opacity: 0.72; } 50% { transform: scale(1.08); opacity: 1; } }
-html[data-atmos="still"] .sun-pulse { animation: none; transform: scale(1); opacity: 0.9; }
-@media (prefers-reduced-motion: reduce) { .sun-pulse { animation: none; } .sun-rot { transition: none; } }
+.sun-disc { fill: var(--sun-color, var(--m-green)); transition: fill 0.4s ease; }
+@media (prefers-reduced-motion: reduce) { .sun-disc { transition: none; } }
 .nav .wm { font-family: var(--d-display); font-weight: 800; font-size: 26px; letter-spacing: 0.02em;
   white-space: nowrap; text-decoration: none; color: inherit; display: flex; align-items: baseline; gap: 10px; }
 .nav .wm small { font-weight: 600; opacity: 0.55; letter-spacing: 0.06em; font-size: 17px; }
