@@ -303,7 +303,7 @@ html[data-atmos="still"] .cloud, html[data-atmos="still"] .star { animation-play
 /* page hero — cream, big display */
 .p-hero { padding-top: clamp(48px, 7vw, 104px); padding-bottom: clamp(36px, 4vw, 56px); }
 .p-hero h1 { font-family: var(--d-display); font-weight: 800; text-transform: uppercase;
-  font-size: clamp(52px, 8vw, 116px); line-height: 0.9; letter-spacing: 0.005em; margin: 6px 0 0; }
+  font-size: clamp(52px, 8vw, 116px); line-height: 0.98; letter-spacing: 0.005em; margin: 6px 0 0; }
 .p-hero .lede { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; font-weight: 500;
   max-width: 56ch; margin: 26px 0 0; color: var(--ink-2); text-wrap: pretty; }
 .p-hero .lede strong { color: var(--ink); font-weight: 700; }
