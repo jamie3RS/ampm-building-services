@@ -13,6 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset "css/hybrid.css"}}" />
+  {{!-- Branded social/link-preview image (WhatsApp, iMessage, Slack, FB, X).
+        Placed before ghost_head so this is the primary og:image, overriding
+        Ghost's default purple publication-cover placeholder. --}}
+  <meta property="og:image" content="{{@site.url}}{{asset "og-card.jpg"}}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{@site.url}}{{asset "og-card.jpg"}}" />
   {{ghost_head}}
   <link rel="icon" type="image/svg+xml" href="{{asset "favicon.svg"}}" />
 </head>
@@ -28,16 +36,16 @@
   {{#match page.slug "bs-fabric"}}{{> "launch/fabric"}}{{/match}}
   {{#match page.slug "bs-groundworks"}}{{> "launch/groundworks"}}{{/match}}
 
-  {{!-- Day-arc: the nav disc (--sun-color) sweeps warm→cool through the four
-        brand colours as you scroll a page (orange→green→blue→violet, HSL-blended);
-        the nav also switches to dark-section mode where it overlaps a dark band. --}}
+  {{!-- Day-arc: the nav disc (--sun-color) sweeps through the four brand
+        colours as you scroll a page (orange→green→purple→blue, HSL-blended,
+        blue = night); the nav also switches to dark-section mode over dark bands. --}}
   <script>
   (function () {
     var rootEl = document.documentElement;
     var nav = document.querySelector('nav.nav') || document.querySelector('nav');
-    // Smooth warm→cool sweep through the four brand colours (HSL-interpolated
-    // so mid-tones stay vivid): orange → amber → green → teal → blue → violet.
-    var SUN = ['#E87A2C','#E49128','#DFA823','#D6BC23','#CBCA26','#ABC028','#8DB62A','#74AB2B','#5EA12C','#4B982D','#3B8E2E','#2E9132','#2E9444','#2E9758','#2E996C','#2E9C81','#2E9F97','#2E96A2','#2E84A5','#2E70A8','#2E5CAB','#2E4CA8','#2E3EA5','#2E30A2','#3A2EA0','#472E9D','#532E9A','#5F2E97','#692E94','#742E92','#7A2E8F'];
+    // Smooth sweep through the four brand colours (HSL-interpolated so
+    // mid-tones stay vivid): orange → green → purple → blue (blue = night).
+    var SUN = ['#E87A2C','#E49128','#DFA823','#D6BC23','#CBCA26','#ABC028','#8DB62A','#74AB2B','#5EA12C','#4B982D','#3B8E2E','#2E8E3E','#2E8E5A','#2E8E76','#2E8A8E','#2E6E8E','#2E518F','#2E358F','#442E8F','#612E8F','#7D2E8F','#742E92','#692E94','#5F2E97','#532E9A','#472E9D','#3A2EA0','#2E30A2','#2E3EA5','#2E4CA8','#2E5FAB'];
     var ticking = false;
     function update() {
       ticking = false;
