@@ -72,7 +72,11 @@ html[data-arc="subtle"] .nightfall {
 .nav.scrolled { background: rgba(253,250,242,0.9); backdrop-filter: blur(16px) saturate(1.15); -webkit-backdrop-filter: blur(16px) saturate(1.15); box-shadow: 0 1px 0 rgba(28,24,18,0.12); }
 .nav.dark { color: var(--night-text); }
 .nav.dark.scrolled { background: rgba(11,14,28,0.86); backdrop-filter: blur(16px) saturate(1.15); -webkit-backdrop-filter: blur(16px) saturate(1.15); box-shadow: 0 1px 0 rgba(244,234,216,0.15); }
-.sunmark { width: 38px; height: 38px; flex: none; display: block; overflow: visible; color: inherit; }
+.sunmark { width: 38px; height: 38px; flex: none; display: block; overflow: visible; color: inherit;
+  /* nudge right so the disc's left edge lines up with the content text column
+     (.wrap padding-left); the -7px accounts for the disc's inset in its box */
+  margin-left: calc(var(--spine-x) + clamp(18px, 3vw, 46px) - var(--pad-x) - 7px); }
+@media (max-width: 1000px) { .sunmark { margin-left: 0; } }
 .sun-disc { fill: var(--sun-color, #E87A2C); transition: fill 0.25s ease, filter 0.25s ease;
   filter: drop-shadow(0 0 4px var(--sun-color)); }
 @media (prefers-reduced-motion: reduce) { .sun-disc { transition: none; } }
