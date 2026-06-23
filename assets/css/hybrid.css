@@ -391,7 +391,9 @@ html[data-atmos="still"] .cloud, html[data-atmos="still"] .star { animation-play
 /* ——— capability cards (Work) ——— */
 .cap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 @media (max-width: 800px) { .cap-grid { grid-template-columns: 1fr; } }
-.cap { display: flex; flex-direction: column; }
+.cap { display: flex; flex-direction: column; color: inherit; text-decoration: none; transition: transform 0.15s ease; }
+.cap:hover { transform: translateY(-3px); }
+.cap:hover h4 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 .cap .img { width: 100%; height: 240px; background: rgba(28,24,18,0.07); display: block; }
 .cap .kind { font-family: var(--d-display); font-weight: 700; text-transform: uppercase; font-size: 15px; letter-spacing: 0.06em; margin: 16px 0 0; color: #fff; background: var(--ink); display: inline-block; align-self: flex-start; padding: 6px 12px; }
 .cap h4 { font-family: var(--d-display); font-weight: 700; text-transform: uppercase; font-size: 27px; line-height: 1; margin: 14px 0 8px; }
