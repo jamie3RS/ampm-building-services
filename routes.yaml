@@ -102,6 +102,21 @@ routes:
   /groundworks/boundaries/:
     template: custom-bs-launch
     data: page.bs-groundworks-boundaries
+  /areas/:
+    template: custom-bs-launch
+    data: page.bs-areas
+  /areas/london/:
+    template: custom-bs-launch
+    data: page.bs-area-london
+  /areas/crawley-gatwick/:
+    template: custom-bs-launch
+    data: page.bs-area-crawley-gatwick
+  /areas/brighton-hove/:
+    template: custom-bs-launch
+    data: page.bs-area-brighton-hove
+  /areas/guildford-surrey/:
+    template: custom-bs-launch
+    data: page.bs-area-guildford-surrey
 
 taxonomies:
   tag: /topic/{slug}/
