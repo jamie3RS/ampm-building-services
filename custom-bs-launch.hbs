@@ -67,6 +67,20 @@
     setTimeout(update, 300);
   })();
   </script>
+
+  {{!-- Make the whole service-list row on /services/ clickable through to its
+        service page (the inner "Explore →" <a> stays the crawlable link). --}}
+  <script>
+  (function () {
+    document.querySelectorAll('.svc-detail.link[id]').forEach(function (row) {
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        window.location.href = '/' + row.id + '/';
+      });
+    });
+  })();
+  </script>
   {{ghost_foot}}
 </body>
 </html>
