@@ -33,6 +33,27 @@ routes:
   /groundworks/:
     template: custom-bs-launch
     data: page.bs-groundworks
+  /sectors/:
+    template: custom-bs-launch
+    data: page.bs-sectors
+  /sectors/offices/:
+    template: custom-bs-launch
+    data: page.bs-sector-offices
+  /sectors/healthcare/:
+    template: custom-bs-launch
+    data: page.bs-sector-healthcare
+  /sectors/education/:
+    template: custom-bs-launch
+    data: page.bs-sector-education
+  /sectors/industrial/:
+    template: custom-bs-launch
+    data: page.bs-sector-industrial
+  /sectors/residential/:
+    template: custom-bs-launch
+    data: page.bs-sector-residential
+  /sectors/hospitality/:
+    template: custom-bs-launch
+    data: page.bs-sector-hospitality
 
 taxonomies:
   tag: /topic/{slug}/
