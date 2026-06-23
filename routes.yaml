@@ -54,6 +54,54 @@ routes:
   /sectors/hospitality/:
     template: custom-bs-launch
     data: page.bs-sector-hospitality
+  /meph/mechanical-hvac/:
+    template: custom-bs-launch
+    data: page.bs-meph-mechanical-hvac
+  /meph/electrical/:
+    template: custom-bs-launch
+    data: page.bs-meph-electrical
+  /meph/public-health/:
+    template: custom-bs-launch
+    data: page.bs-meph-public-health
+  /meph/data-infrastructure/:
+    template: custom-bs-launch
+    data: page.bs-meph-data-infrastructure
+  /commercial/cat-a/:
+    template: custom-bs-launch
+    data: page.bs-commercial-cat-a
+  /commercial/cat-b/:
+    template: custom-bs-launch
+    data: page.bs-commercial-cat-b
+  /commercial/refurbishment/:
+    template: custom-bs-launch
+    data: page.bs-commercial-refurbishment
+  /commercial/integrated-me/:
+    template: custom-bs-launch
+    data: page.bs-commercial-integrated-me
+  /fabric/facade-cladding/:
+    template: custom-bs-launch
+    data: page.bs-fabric-facade-cladding
+  /fabric/roofing/:
+    template: custom-bs-launch
+    data: page.bs-fabric-roofing
+  /fabric/bsa-remediation/:
+    template: custom-bs-launch
+    data: page.bs-fabric-bsa-remediation
+  /fabric/survey-compliance/:
+    template: custom-bs-launch
+    data: page.bs-fabric-survey-compliance
+  /groundworks/hard-landscaping/:
+    template: custom-bs-launch
+    data: page.bs-groundworks-hard-landscaping
+  /groundworks/soft-landscaping/:
+    template: custom-bs-launch
+    data: page.bs-groundworks-soft-landscaping
+  /groundworks/surfacing/:
+    template: custom-bs-launch
+    data: page.bs-groundworks-surfacing
+  /groundworks/boundaries/:
+    template: custom-bs-launch
+    data: page.bs-groundworks-boundaries
 
 taxonomies:
   tag: /topic/{slug}/
