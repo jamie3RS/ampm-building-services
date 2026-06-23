@@ -503,7 +503,7 @@ html[data-atmos="still"] .cloud, html[data-atmos="still"] .star { animation-play
   padding: 22px 0; border-top: 1px solid rgba(28,24,18,0.14); }
 .steps .step:last-child { border-bottom: 1px solid rgba(28,24,18,0.14); }
 .steps .step-n { font-family: var(--d-display); font-weight: 800; line-height: 1;
-  font-size: clamp(28px,3.4vw,44px); color: var(--m-green); }
+  font-size: clamp(28px,3.4vw,44px); color: var(--svc, var(--m-green)); }
 .steps .step h4 { margin: 0 0 6px; font-family: var(--d-display); font-weight: 700;
   font-size: clamp(19px,1.7vw,24px); letter-spacing: 0.01em; }
 .steps .step p { margin: 0; font-size: clamp(15px,1.15vw,17px); line-height: 1.55;
@@ -518,7 +518,7 @@ html[data-atmos="still"] .cloud, html[data-atmos="still"] .star { animation-play
   font-size: clamp(17px,1.5vw,22px); letter-spacing: 0.01em; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary::after { content: "+"; position: absolute; right: 4px; top: 18px;
-  font-size: 26px; line-height: 1; color: var(--m-green); }
+  font-size: 26px; line-height: 1; color: var(--svc, var(--m-green)); }
 .faq-item[open] summary::after { content: "\2013"; }
 .faq-item p { margin: 0 0 22px; font-size: clamp(15px,1.15vw,17px); line-height: 1.6;
   color: var(--ink-2, #3a352c); max-width: 70ch; }
