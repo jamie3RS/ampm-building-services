@@ -61,3 +61,7 @@ Email convention: `@ampm.co.uk` (per Group policy, all new entities consolidate 
 - Supply chain: `suppliers@ampm.co.uk`
 - Careers: `careers@ampm.co.uk`
 - MD: `dan.small@ampm.co.uk`
+
+## Status (8 Sep 2026)
+
+The Ghost(Pro) site this theme deployed to was retired on 1 July 2026 when www.ampmbuilding.services moved to the Astro build in `jamie3RS/ampm-sites` (branch `bs-astro`, root `bs/`). This repo now holds the **source partials** (`partials/launch/*.hbs`, `custom-bs-launch.hbs`) that the Astro pipeline ports; edit copy here, then run the 14-step pipeline described in `_websites/bs/README.md`. The `Deploy Ghost Theme` GitHub Action was removed on 8 Sep 2026 because its target no longer exists (every push had started failing with an email to Jamie).
